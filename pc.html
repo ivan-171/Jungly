@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1"><meta name="theme-color" content="#101c1a">
+<title>Frontera Viva 0.4 PC · Jungla estratégica</title>
+<style>
+:root{--bg:#0b1717;--panel:#172925;--panel2:#213830;--line:#3b5549;--cream:#f0f1e5;--muted:#a6b9ac;--green:#a9e3bb;--red:#f29c8b;--gold:#efd18b;--blue:#b6ddff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 15% -4%,#254234 0%,#101c1a 48%,#0a1214 100%);color:var(--cream);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible,canvas:focus-visible{outline:2px solid var(--gold);outline-offset:2px}button:disabled{cursor:not-allowed;opacity:.4}.wrap{max-width:1500px;margin:auto;padding:15px 17px 22px}.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px}.identity{display:flex;gap:11px;align-items:center}.identity .mark{display:grid;place-items:center;width:48px;height:48px;font-size:26px;background:#2c483b;border:1px solid #728c72;border-radius:13px}.kicker{font-weight:800;font-size:10px;letter-spacing:.17em;color:#afdcc0}.identity h1{margin:1px 0;font-size:23px;line-height:1.15;letter-spacing:-.03em}.identity h1 small{font-size:11px;color:#a8cbbb;letter-spacing:0}.subline{font-size:12px;color:#a5b9ac}.header-actions{display:flex;gap:7px}.soft{background:#22362e;color:#eaf0df;border:1px solid #607f69;border-radius:9px;padding:9px 12px;font-weight:750;font-size:12px}.soft:hover:not(:disabled){background:#345143}.metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:0 0 10px}.metric{background:#182a26;border:1px solid #3b5649;border-radius:11px;padding:9px 13px;min-width:0}.metric-label{font-size:10px;letter-spacing:.12em;font-weight:900;color:#b3cabb;text-transform:uppercase}.metric-num{font-size:20px;font-weight:900;line-height:1.35;font-variant-numeric:tabular-nums;white-space:nowrap}.metric-num small{font-size:11px;font-weight:650;color:#a9bba9}.track{height:5px;background:#0b1715;overflow:hidden;border-radius:12px;margin-top:6px}.fill{height:100%;transition:width .2s;background:#8bdbb3}.fill.health{background:linear-gradient(90deg,#da7168,#f4b086)}.fill.xp{background:linear-gradient(90deg,#599ccc,#b5dbed)}.fill.time{background:#e8c67a}.fill.territory{background:#8cd49f}.layout{display:grid;grid-template-columns:minmax(0,1fr) 318px;gap:12px;align-items:start}.board{background:#152820;border:1px solid #4b6b53;border-radius:14px;min-width:0;overflow:hidden;box-shadow:0 20px 65px #0006}.boardbar{padding:10px 14px;background:#22382e;display:flex;align-items:center;justify-content:space-between;gap:9px;border-bottom:1px solid #405e4c;font-size:11px;font-weight:800;letter-spacing:.06em}.boardbar #alert{font-size:11px;color:#efcf9a;font-weight:650;letter-spacing:0;max-width:50%;text-align:right}.mapwrap{position:relative;line-height:0;touch-action:none}canvas{display:block;width:100%;height:auto;aspect-ratio:1000 / 640;cursor:crosshair;touch-action:none}.mapTip{position:absolute;max-width:225px;pointer-events:none;display:none;padding:9px 11px;background:#101f1af1;border:1px solid #a6c6a38f;color:#eef2e7;border-radius:9px;font-size:12px;line-height:1.45;box-shadow:0 8px 30px #0008;z-index:5}.mapTip strong{color:#fae3a7}.cover{position:absolute;inset:0;background:#08140edc;backdrop-filter:blur(3px);display:grid;place-items:center;z-index:4;padding:14px;line-height:1.5}.cover.hide{display:none}.modal{width:min(520px,100%);background:linear-gradient(155deg,#243a2d,#11221e);border:1px solid #8cad82a1;border-radius:18px;text-align:center;padding:24px 25px;box-shadow:0 18px 60px #0009;max-height:100%;overflow:auto}.modal .symbol{font-size:38px}.modal h2{font-size:clamp(22px,3vw,30px);margin:5px 0 8px;line-height:1.2}.modal p{font-size:13px;color:#c1d3c4;margin:0 0 12px}.modal .rules{display:grid;grid-template-columns:1fr 1fr;gap:7px;text-align:left;margin:14px 0}.modal .rules div{background:#172d24;border:1px solid #47644d;border-radius:8px;padding:8px 9px;font-size:11px;color:#cbdfd1}.goldbutton{background:linear-gradient(#f3dea9,#d7b86d);border:1px solid #fff0bd;box-shadow:0 4px 0 #665837;border-radius:9px;color:#1a251d;font-weight:900;padding:11px 22px;min-height:43px}.goldbutton:hover{filter:brightness(1.07)}.footerbar{display:flex;align-items:center;justify-content:space-between;gap:7px;padding:8px 12px;background:#1a2e25;border-top:1px solid #405f4d;color:#bcd0bd;font-size:11px}.hint strong{color:#f6d794}.controls{display:flex;gap:6px;padding:7px;background:#15261e;border-top:1px solid #334c3b}.mini{flex:1;background:#263b2b;color:#e8ead7;border:1px solid #67826a;border-radius:8px;padding:6px 8px;font-size:11px;font-weight:800}.mini:active{background:#426047}.side{display:flex;flex-direction:column;gap:10px}.box{background:#172a25;border:1px solid #3c574b;border-radius:12px;padding:12px}.boxhead{display:flex;justify-content:space-between;align-items:center;gap:7px;margin-bottom:9px}.boxhead h2{font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:#d6e6d7;margin:0}.boxhead span{font-size:10px;color:#9fb6a9}.side .box p{font-size:11px;color:#bdd0be;line-height:1.55;margin:6px 0}.progressstrip{height:8px;background:#091714;border-radius:8px;overflow:hidden;display:flex;margin:10px 0}.progressstrip .friend{background:#72b999}.progressstrip .foe{background:#d58071}.village{width:100%;display:flex;align-items:center;gap:8px;background:transparent;color:var(--cream);border:0;border-top:1px solid #344d41;padding:8px 2px;text-align:left}.village:hover{background:#243b30}.village:first-child{border-top:0}.vicon{width:27px;height:27px;display:grid;place-items:center;border:1px solid #5f816a;border-radius:7px;background:#2d4736;font-size:15px;flex:none}.village.enemy .vicon{background:#49352c;border-color:#996353}.vmeta{min-width:0;flex:1}.vname{font-size:11px;font-weight:850;white-space:nowrap}.vdesc{font-size:10px;color:#adbbad}.tinybar{height:4px;background:#0a1917;border-radius:10px;overflow:hidden;margin-top:4px}.tinybar div{height:100%;background:#8ac8a5}.village.enemy .tinybar div{background:#d58f7d}.vhealth{font-size:11px;color:#e2dfbd;font-variant-numeric:tabular-nums;white-space:nowrap}.action{display:grid;grid-template-columns:27px minmax(0,1fr) auto;align-items:center;gap:7px;text-align:left;width:100%;background:#263e33;border:1px solid #6d8b72;color:var(--cream);padding:10px 8px;border-radius:9px;min-height:52px;margin:7px 0 0}.action b{font-size:12px}.action small{color:#b4cbba;font-size:10px}.price{font-size:11px;color:#f4dba1;font-weight:900;white-space:nowrap}.hotkey{border:1px solid #77957a;padding:3px;border-radius:5px;background:#172b21;text-align:center;color:#f6d996;font-size:10px;font-weight:900}.local{background:#253b2e;border:1px solid #516b56;border-radius:8px;color:#d4e5d3;font-size:11px;padding:8px;margin:5px 0}.local strong{color:#e9dda5}.feed{min-height:126px}.log{padding:7px 0;font-size:11px;line-height:1.4;color:#c4d8c8;border-top:1px solid #31483b}.log:first-child{border-top:0}.log.warn{color:#ffc2a4}.logtime{color:#839f8e;font-size:10px;margin-right:6px}.campRow{display:flex;justify-content:space-between;align-items:center;font-size:11px;padding:6px 0;border-top:1px solid #304638;gap:5px}.campRow:first-child{border-top:0}.pill{font-size:9px;font-weight:800;letter-spacing:.03em;padding:2px 6px;background:#293e32;border:1px solid #476b54;color:#e1ddad;border-radius:100px;white-space:nowrap}.pill.danger{background:#453028;color:#ffa58d;border-color:#825f48}.bottomnote{text-align:center;font-size:11px;color:#94ad9b;margin:13px 0}.pulse{animation:pulse 1s infinite alternate}@keyframes pulse{to{opacity:.5}}@media(max-width:1070px){.layout{grid-template-columns:minmax(0,1fr) 280px}.box{padding:10px}}@media(max-width:760px){.wrap{padding:8px}.top{gap:5px;margin-bottom:9px}.identity{gap:7px}.identity .mark{width:37px;height:37px;font-size:21px}.identity h1{font-size:18px}.subline{display:none}.kicker{font-size:8px}.soft{font-size:11px;padding:6px 8px}.metrics{gap:4px;margin-bottom:7px}.metric{padding:6px 7px;border-radius:8px}.metric-label{font-size:8px;letter-spacing:0}.metric-num{font-size:14px}.metric-num small{font-size:9px}.track{margin-top:4px}.layout{grid-template-columns:1fr;gap:7px}.boardbar{padding:7px 8px;font-size:10px}.boardbar #alert{font-size:9px}.footerbar{padding:6px 8px;font-size:9px}.controls{padding:5px}.mini{font-size:10px}.side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.side .box:nth-child(2){grid-column:1/3}.villages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}.village{border:1px solid #385344!important;border-radius:8px;padding:6px 4px}.vicon{width:22px;height:22px;font-size:12px}.vname{font-size:10px}.vdesc{font-size:9px}.vhealth{display:none}.action{min-height:43px;padding:6px;margin-top:5px}.action b{font-size:10px}.action small{font-size:9px}.price{font-size:10px}.modal{padding:15px;max-width:460px}.modal .symbol{font-size:30px}.modal h2{font-size:22px}.modal p{font-size:12px}.modal .rules{margin:7px 0}.modal .rules div{padding:6px;font-size:10px}.goldbutton{min-height:40px;padding:9px 20px}}@media(max-width:410px){.metric{padding:4px 5px}.metric-num{font-size:13px}.metric-label{font-size:7px}.side{grid-template-columns:1fr}.side .box:nth-child(2){grid-column:auto}.villages{grid-template-columns:repeat(2,minmax(0,1fr))}.footerbar span:last-child{display:none}}@media(prefers-reduced-motion:reduce){.pulse{animation:none}}
+.campRow .pill{font-variant-numeric:tabular-nums}.campRow:has(.danger){background:#52392e1c}.local#rivalIntel{border-color:#855950;background:#372a28;color:#ffd0c8}.local#rivalIntel strong{color:#ffb9aa}@media(max-width:760px){.campRow{font-size:10px}.campRow .pill{font-size:9px}}
+
+/* v0.4: covers are viewport dialogs, never clipped inside a small canvas. */
+.cover{position:fixed;inset:0;z-index:100;touch-action:pan-y;overflow-y:auto;overscroll-behavior:contain;align-items:center;justify-items:center;padding:20px;}
+.cover .modal{max-height:min(86dvh,780px);overflow:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;}
+@media(max-width:760px){.cover .modal{max-height:88dvh;} .cover .goldbutton{position:sticky;bottom:0;z-index:1;min-height:50px;width:100%;}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="top"><div class="identity"><div class="mark">🌿</div><div><div class="kicker">ESTRATEGIA DE MAPA VIVO · SOLO PLAYER</div><h1>FRONTERA VIVA <small>v0.4 · PC</small></h1><div class="subline">Crece a tu ritmo. Lee el mapa. Decide qué salvar.</div></div></div><div class="header-actions"><button id="pause" class="soft">⏸ Pausa</button><button id="restart" class="soft">↻ Reiniciar</button></div></header>
+<div class="metrics">
+<div class="metric"><div class="metric-label">❤️ Salud</div><div class="metric-num"><span id="hp">130</span><small id="hpmax"> / 130</small></div><div class="track"><div id="hpbar" class="fill health"></div></div></div>
+<div class="metric"><div class="metric-label">✦ Nivel</div><div class="metric-num"><span id="level">1</span> <small id="xptext">0/45 PX</small></div><div class="track"><div id="xpbar" class="fill xp"></div></div></div>
+<div class="metric"><div class="metric-label">🪙 Oro</div><div class="metric-num"><span id="gold">15</span><small> monedas</small></div><div class="track"><div class="fill" style="width:100%;background:#d4b86f"></div></div></div>
+<div class="metric"><div class="metric-label">🏰 Territorio</div><div class="metric-num"><span id="territory">3 / 6</span> <small id="holding"></small></div><div class="track"><div id="terrbar" class="fill territory" style="width:50%"></div></div></div>
+<div class="metric"><div class="metric-label">⌛ Restante</div><div class="metric-num" id="timer">07:00</div><div class="track"><div id="timerbar" class="fill time" style="width:100%"></div></div></div>
+</div>
+<div class="layout"><main class="board">
+<div class="boardbar"><span>🗺️ VALLE DE LOS DOS BANDOS</span><span id="alert">Toca una ruta para explorar</span></div>
+<div class="mapwrap" id="mapwrap"><canvas id="world" width="1000" height="640" tabindex="0" aria-label="Mapa interactivo: tocar o hacer clic para moverse, o utilizar WASD"></canvas><div id="mapTip" class="mapTip"></div>
+<div id="cover" class="cover"><div class="modal"><div id="covericon" class="symbol">⚔️</div><h2 id="covertitle">Una frontera en guerra</h2><p id="coverbody">Hay 3 aldeas aliadas y 3 enemigas, pero <strong style="color:#f6dda0">tú no atacas edificios</strong>. Farmea campamentos fáciles, vuelve a una aldea para curarte y protege caravanas. El jungla rojo compite por los mismos campamentos.</p><div class="rules" id="coverrules"><div>🖱️ <strong>Clic, toque o WASD</strong> para moverte; el ataque es automático.</div><div>🩹 <strong>Curación automática:</strong> pisa una aldea verde (16 PV/s).</div><div>🐺 <strong>Campamentos</strong> verdes = fáciles; naranja/rojo = peligrosos.</div><div>🏰 <strong>Las patrullas conquistan</strong>; tú limpias tropas y apoyas.</div></div><button id="play" class="goldbutton">EMPEZAR PARTIDA ▶</button><p style="font-size:11px;margin:14px 0 0;color:#9fb4a4">Victoria: controlar al menos 4 aldeas al acabar. Victoria inmediata: mantener 5 aldeas durante 25 s. Puedes morir y reaparecer, pero pierdes oro y tiempo.</p></div></div></div>
+<div class="footerbar"><span class="hint">👆 Clic / tocar · <strong>WASD</strong> · Autoataque · <strong>1 / 2 / 3</strong> inversiones</span><span id="poshint">En las aldeas amigas te curas.</span></div><div class="controls"><button id="gotoHeal" class="mini">🩹 Buscar refugio</button><button id="gotoWeak" class="mini">⚔️ Ir al frente</button><button id="speed" class="mini">▶ 1× Velocidad</button></div>
+</main><aside class="side"><section class="box"><div class="boxhead"><h2>⚔️ La guerra no se detiene</h2><span id="frontscore">3 contra 3</span></div><div class="progressstrip"><div class="friend" id="friendstrip" style="width:50%"></div><div class="foe" id="foestrip" style="width:50%"></div></div><p id="statusLine">Refuerza tu posición mientras el enemigo prepara su avance.</p><div class="local" id="nearSite">🏠 Acércate a una aldea aliada para curarte o invertir.</div><div class="local" id="rivalIntel">🥷 Rival: buscando campamentos.</div></section>
+<section class="box"><div class="boxhead"><h2>🏘️ Aldeas autónomas</h2><span>Haz clic para viajar</span></div><div class="villages" id="villages"></div></section>
+<section class="box"><div class="boxhead"><h2>🛠️ Decisiones locales</h2><span>Necesitas estar cerca</span></div><button id="medic" class="action"><span class="hotkey">1</span><span><b>🩹 Mejorar enfermería</b><br><small id="medictext">Curación más rápida y mejor defensa</small></span><span id="mediccost" class="price">35 🪙</span></button><button id="defense" class="action"><span class="hotkey">2</span><span><b>🛡️ Mejorar fortificación</b><br><small id="deftext">Torre más fuerte y mayor aguante</small></span><span id="defcost" class="price">45 🪙</span></button><button id="push" class="action"><span class="hotkey">3</span><span><b>⚔️ Lanzar ofensiva</b><br><small>Manda una patrulla extra al frente</small></span><span class="price">45 🪙</span></button></section>
+<section class="box"><div class="boxhead"><h2>📡 Inteligencia</h2><span>Información incompleta</span></div><div class="feed" id="feed"></div></section>
+<section class="box"><div class="boxhead"><h2>🌲 Campamentos</h2><span>Evaluados para tu nivel</span></div><div id="camps"></div><p>El rival farmea los mismos monstruos. Un campamento eliminado reaparece tras su contador.</p></section>
+</aside></div><div class="bottomnote">Prototipo local, sin conexión ni librerías externas. Simulación y renderizado en un único HTML.</div></div>
+<div id="runtime-warning" role="alert" style="position:fixed;inset:auto 12px 12px;z-index:99999;box-sizing:border-box;max-width:540px;margin:auto;padding:17px 20px;background:#54251d;color:white;border:2px solid #ffc17b;border-radius:14px;font:600 14px/1.5 system-ui;box-shadow:0 12px 50px #000b">⚠️ Este visor NO está ejecutando el juego. El HTML necesita JavaScript; la previsualización de archivos de ChatGPT en iPhone puede bloquearlo. Para jugar, publica <b>index.html</b> en una web y ábrela en Safari. No sirve con tocar «Empezar» aquí.</div>
+<script>
+(()=>{'use strict';
+const W=1000,H=640,DURATION=420,$=id=>document.getElementById(id),C=$('world'),g=C.getContext('2d');
+const VDATA=[
+{name:'Robledal',x:148,y:154,home:'ally',emoji:'🌲',tag:'norte',squad:24},
+{name:'Vado Gris',x:160,y:500,home:'ally',emoji:'⛏️',tag:'sur',squad:24.5},
+{name:'Cruce Alba',x:390,y:326,home:'ally',emoji:'🏡',tag:'centro',squad:25},
+{name:'Peñarroja',x:852,y:143,home:'enemy',emoji:'🏰',tag:'norte',squad:25.5},
+{name:'Cenizal',x:850,y:498,home:'enemy',emoji:'🔥',tag:'sur',squad:25.5},
+{name:'Paso Umbrío',x:611,y:326,home:'enemy',emoji:'🏴',tag:'centro',squad:23}
+];
+// Campamentos: 8 accesibles desde el inicio, 3 intermedios, 2 duros y 1 jefe.
+// Al ser una partida de farmeo, ninguna facción puede monopolizar las fuentes de XP.
+const CAMPDATA=[
+{name:'Lobos del roble',x:271,y:120,tier:1,hp:78,dmg:8,rate:1.80,xp:30,gold:23,respawn:43,emoji:'🐺'},
+{name:'Jabalí del vado',x:264,y:548,tier:1,hp:82,dmg:9,rate:1.72,xp:31,gold:24,respawn:45,emoji:'🐗'},
+{name:'Ratas del puente',x:320,y:271,tier:1,hp:74,dmg:8,rate:1.87,xp:29,gold:22,respawn:42,emoji:'🐀'},
+{name:'Zorros del oeste',x:375,y:566,tier:1,hp:93,dmg:10,rate:1.83,xp:34,gold:26,respawn:47,emoji:'🦊'},
+{name:'Víboras del este',x:735,y:116,tier:1,hp:78,dmg:8,rate:1.80,xp:30,gold:23,respawn:43,emoji:'🐍'},
+{name:'Lobos oscuros',x:737,y:542,tier:1,hp:82,dmg:9,rate:1.72,xp:31,gold:24,respawn:45,emoji:'🐺'},
+{name:'Cuervos de ceniza',x:675,y:251,tier:1,hp:75,dmg:8,rate:1.80,xp:29,gold:22,respawn:42,emoji:'🦅'},
+{name:'Alimañas del sur',x:660,y:431,tier:1,hp:90,dmg:10,rate:1.83,xp:34,gold:26,respawn:47,emoji:'🦎'},
+{name:'Duendes del río',x:479,y:174,tier:1,hp:98,dmg:11,rate:1.78,xp:36,gold:29,respawn:52,emoji:'👺'},
+{name:'Arañas del río',x:512,y:466,tier:1,hp:98,dmg:11,rate:1.78,xp:36,gold:29,respawn:52,emoji:'🕷️'},
+{name:'Sombras antiguas',x:412,y:77,tier:2,hp:158,dmg:17,rate:1.54,xp:56,gold:42,respawn:57,emoji:'👻'},
+{name:'Escorpión',x:589,y:562,tier:2,hp:170,dmg:19,rate:1.51,xp:60,gold:45,respawn:59,emoji:'🦂'},
+{name:'Ogro errante',x:564,y:103,tier:3,hp:285,dmg:30,rate:1.33,xp:95,gold:76,respawn:69,emoji:'👹'},
+{name:'Troll del barranco',x:424,y:470,tier:3,hp:305,dmg:31,rate:1.30,xp:102,gold:80,respawn:72,emoji:'🧌'},
+{name:'Ancestro del valle',x:503,y:333,tier:4,hp:402,dmg:41,rate:1.21,xp:145,gold:120,respawn:90,emoji:'🐉'}
+];
+const roads=[[0,2],[1,2],[2,5],[3,5],[4,5],[0,3],[1,4],[2,1],[5,4]];
+const grass=[];let seed=171;function rand(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}for(let i=0;i<360;i++){const x=rand()*W,y=rand()*H;if(VDATA.some(v=>Math.hypot(v.x-x,v.y-y)<65)||CAMPDATA.some(v=>Math.hypot(v.x-x,v.y-y)<34))continue;grass.push({x,y,r:3+rand()*8,type:rand()<.18?1:0,a:.26+rand()*.35})}
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),timeStr=t=>`${Math.floor(Math.max(t,0)/60).toString().padStart(2,'0')}:${Math.floor(Math.max(t,0)%60).toString().padStart(2,'0')}`;
+let S,keys={},last=0,uiLast=-1,particles=[],pulses=[],hover=null,uid=0;
+const heroSpeed=158;
+function entity(x,y,team,hp,atk,speed){return{id:++uid,x,y,team,hp,max:hp,atk,speed,cd:0,dead:0,goal:null};}
+function statsAt(level,side='ally'){
+ const n=Math.max(0,level-1);return {hp:160+18*n,atk:26+5*n,attackRate:side==='ally'?.70:.78};
+}
+function expectedDamage(agent,c,rate=.70){
+ // TTK = enemy HP / player's damage-per-second; incoming = TTK * enemy DPS.
+ const ttk=(c.hp/Math.max(1,agent.atk))*rate;
+ return c.dmg*Math.max(1,Math.ceil(ttk/c.rate));
+}
+function viability(agent,c){const expected=expectedDamage(agent,c,agent===S.rival?.78:.70);const budget=Math.max(1,agent.hp);return expected/budget;}
+function create(){uiLast=-1;uid=0;seed=171;particles=[];pulses=[];
+ const hs=statsAt(1),rs=statsAt(1,'enemy');
+ S={mode:'intro',t:0,remaining:DURATION,speed:1,
+ hero:{...entity(239,328,'ally',hs.hp,hs.atk,166),level:1,xp:0,gold:15,target:null,kills:0,respawn:0},
+ rival:{...entity(765,328,'enemy',rs.hp,rs.atk,155),level:1,xp:0,gold:10,mode:'farm',decision:.1,target:null,respawn:0,goalText:'buscando botín'},
+ sites:VDATA.map((d,i)=>({...d,id:i,team:d.home,hp:i===2||i===5?275:330,max:i===2||i===5?275:330,def:0,med:0,stock:31,nextSquad:13+(i%3)*4,under:-99,flash:0,siege:0})),
+ camps:CAMPDATA.map((d,i)=>({...d,id:i,type:'camp',hp:d.hp,max:d.hp,baseHp:d.hp,baseDmg:d.dmg,cd:.7,active:false,target:null,respawnAt:0,reset:0})),
+ troops:[],wagons:[],logs:[],pings:[],nextWagon:24,nextEvent:80,dominance:0,lead:'',lastMove:-1,
+ stats:{caravansLost:0,caravansDelivered:0,rivalKills:0,deaths:0,captured:0,heroCamps:0,rivalCamps:0,troopKills:0},waveCount:0};
+ addLog('Empieza en los lobos, ratas o jabalíes. Verde = fácil; rojo = peligro.');
+ addLog('No necesitas defender todas las aldeas. Invierte donde vaya a importar.');
+ setCover('intro');renderUI();draw();
+}
+function addLog(text,warn=false){S.logs.unshift({at:S.t,msg:text,warn});S.logs=S.logs.slice(0,6)}
+function float(msg,x,y,col='#fce2a3'){particles.push({msg,x,y,life:1,max:1,col});if(particles.length>60)particles.shift()}
+function ring(x,y,col='#edcf96',r=58){pulses.push({x,y,col,r,life:.65,max:.65})}
+function getAllySites(team='ally'){return S.sites.filter(v=>v.team===team)}
+function nearestOwned(a,team){return getAllySites(team).sort((x,y)=>dist(a,x)-dist(a,y))[0]}
+function ownerCount(){return getAllySites().length}
+function logSight(target){if(S.t-S.lastMove>12&&canSee(target)){S.lastMove=S.t;addLog('¡El explorador enemigo ha sido avistado!',true)}}
+function canSee(ob){return dist(S.hero,ob)<155 || S.sites.some(v=>v.team==='ally'&&dist(v,ob)<(v.def?155:112)) || S.t<.1}
+function xpRequired(l){return 54+(l-1)*37}
+function gainXP(character,xp){character.xp+=xp;while(character.xp>=xpRequired(character.level)){
+ character.xp-=xpRequired(character.level);character.level++;const next=statsAt(character.level,character.team);
+ const hpDelta=next.hp-character.max;character.max=next.hp;character.hp+=hpDelta;character.atk=next.atk;
+ float('NIVEL '+character.level,character.x,character.y-25,character.team==='ally'?'#b6e6ff':'#ffacb2');
+ ring(character.x,character.y,character.team==='ally'?'#95c7ff':'#ff9988',56);
+ if(character.team==='ally')addLog(`Nivel ${character.level}: +5 daño y +18 PV máximos (no es curación completa).`);
+ else addLog(`🥷 El jungla rojo alcanza nivel ${character.level}.`,true);
+}}
+function hurt(v,damage,from){if(v.hp<=0||v.respawn>0)return;
+ v.hp=Math.max(0,v.hp-damage);if(v===S.hero||v===S.rival){if(v===S.hero)float('−'+Math.ceil(damage),v.x,v.y-30,'#ffb5a8');if(v.hp<=0)dieHero(v,from);}
+}
+function dieHero(h,from){h.hp=0;h.respawn=h===S.hero?9:12;h.target=null;ring(h.x,h.y,'#fb8176',65);
+ if(h===S.hero){S.stats.deaths++;const loss=Math.ceil(h.gold*.21);h.gold=Math.max(0,h.gold-loss);addLog(`Has muerto: −${loss} oro, reapareces en 9 s. Evita el campamento rojo.`,true)}
+ else{S.stats.rivalKills++;h.mode='dead';addLog('🥷 ¡Derrotaste al jungla rival! Puedes robar sus campamentos.');S.hero.gold+=16;gainXP(S.hero,25)}
+}
+function heroRespawn(h){const v=nearestOwned(h,h.team);if(!v){h.respawn=99;return}
+ h.x=v.x+35;h.y=v.y+18;h.hp=h.max*.72;h.respawn=0;h.cd=0;
+ if(h===S.rival){h.mode='farm';h.decision=.1;}else addLog(`Reapareces en ${v.name}; quédate dentro para sanar.`);
+}
+function moveToward(p,target,dt,bonus=1){if(!target)return;const d=dist(p,target);if(d<2)return;let sp=p.speed*dt*bonus;const k=Math.min(1,sp/d);p.x=clamp(p.x+(target.x-p.x)*k,13,W-13);p.y=clamp(p.y+(target.y-p.y)*k,13,H-13)}
+function getNearSite(){return S.sites.filter(v=>v.team==='ally'&&dist(S.hero,v)<74).sort((a,b)=>dist(a,S.hero)-dist(b,S.hero))[0]||null}
+function upgrade(type){if(S.mode!=='play'||S.hero.respawn>0)return;const site=getNearSite();if(!site){addLog('Debes estar junto a una aldea aliada para invertir.',true);return}const cost=type==='med'?35+site.med*25:type==='def'?45+site.def*25:45;if(type==='med'&&site.med>=2||type==='def'&&site.def>=2){addLog('Ya has alcanzado el máximo de esta mejora.');return}if(S.hero.gold<cost){addLog(`Necesitas ${cost} de oro, tienes ${Math.floor(S.hero.gold)}.`,true);return}S.hero.gold-=cost;if(type==='med'){site.med++;site.hp=Math.min(site.max,site.hp+35);addLog(`Enfermería mejorada en ${site.name}: ahora cura más deprisa.`)}else if(type==='def'){site.def++;site.max+=90;site.hp=Math.min(site.max,site.hp+110);addLog(`Fortificación de ${site.name} al nivel ${site.def}.`)}else{const foe=S.sites.filter(v=>v.team==='enemy').sort((a,b)=>dist(a,site)-dist(b,site))[0];if(foe){spawnPatrol(site,3,false,foe);site.stock+=12;addLog(`¡Ofensiva de ${site.name} hacia ${foe.name}!`);ring(site.x,site.y,'#c2e7c0',65)}}renderUI()}
+function spawnPatrol(site,count,atStart=false,target=null){const options=S.sites.filter(v=>v.team!==site.team);const lane={0:3,1:4,2:5,3:0,4:1,5:2}[site.id];const preferred=S.sites[lane];const enemy=preferred&&preferred.team!==site.team&&rand()<.78?preferred:options.sort((a,b)=>(a.hp/a.max+dist(a,site)/2600)-(b.hp/b.max+dist(b,site)/2600))[0];const dest=target||enemy;if(!dest)return;for(let j=0;j<count;j++){const u=entity(site.x+(j-1)*13,site.y+25+j*7,site.team,site.team==='enemy'?83:83,site.team==='enemy'?12:12,57+rand()*5);u.origin=site.id;u.goal=dest.id;u.type='unit';u.cd=rand();u.siege=1;u.guard=dest.team===site.team;u.guardUntil=S.t+36;S.troops.push(u)} }
+function spawnWagon(team){const owned=getAllySites(team);if(owned.length<2)return;const v=owned[Math.floor(rand()*owned.length)];const end=owned.filter(x=>x!==v).sort((a,b)=>Math.abs(dist(v,a)-310)-Math.abs(dist(v,b)-310))[0];if(!end)return;const a=entity(v.x,v.y,team,146,0,49);a.type='wagon';a.start=v.id;a.goal=end.id;a.arrived=false;a.ambushAt=S.t+2.8+rand()*1.8;a.ambushed=false;S.wagons.push(a);if(team==='ally')addLog(`Caravana de ${v.name} sale hacia ${end.name}.`)}
+function findTarget(u,range){const team=u.team;const list=[];const foeHero=team==='ally'?S.rival:S.hero;if(foeHero.respawn<=0&&foeHero.hp>0)list.push(foeHero);for(const p of S.troops)if(p.team!==team&&p.hp>0)list.push(p);for(const p of S.wagons)if(p.team!==team&&p.hp>0)list.push(p);return list.filter(p=>dist(u,p)<range).sort((a,b)=>dist(a,u)-dist(b,u))[0]||null}
+function doAttack(u,target,damage){
+ if(target.type==='camp'){target.hp=Math.max(0,target.hp-damage);target.active=true;target.cd=Math.max(target.cd,.3);if(target.hp===0)killCamp(target,u);}
+ else{hurt(target,damage,u);
+ if(target.type==='unit'&&target.hp===0){if(u===S.hero)float('+6 🪙',target.x,target.y-12,'#b1e6cc');if(u===S.hero){S.hero.gold+=6;gainXP(S.hero,9);S.stats.troopKills++;}else if(u===S.rival){S.rival.gold+=6;gainXP(S.rival,9)}}
+ if(target.type==='wagon'&&target.hp===0){if(target.team==='ally')S.stats.caravansLost++;
+ if(u===S.hero){S.hero.gold+=22;gainXP(S.hero,22)}if(u===S.rival){S.rival.gold+=22;gainXP(S.rival,22)}
+ addLog(`${target.team==='ally'?'¡Caravana aliada':'Caravana enemiga'} destruida.`,target.team==='ally');ring(target.x,target.y,'#e6b57b',44)}
+ }
+}
+function killCamp(c,u){c.hp=0;c.active=false;c.respawnAt=S.t+c.respawn;c.reset=0;ring(c.x,c.y,'#f0cb85',48);
+ if(u===S.hero){S.hero.gold+=c.gold;S.stats.heroCamps++;gainXP(S.hero,c.xp);addLog(`Campamento ${c.name}: +${c.gold} oro, +${c.xp} PX.`);float('+'+c.gold+' 🪙',c.x,c.y-27)}
+ else{S.rival.gold+=c.gold;S.stats.rivalCamps++;gainXP(S.rival,c.xp);addLog(`🥷 El jungla rojo ha limpiado ${c.name}. Respawn ${c.respawn}s.`,true)}
+}
+function updateHero(dt){const h=S.hero;h.cd=Math.max(0,h.cd-dt);if(h.respawn>0){h.respawn-=dt;if(h.respawn<=0)heroRespawn(h);return}
+ const x=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0),y=(keys.s||keys.arrowdown?1:0)-(keys.w||keys.arrowup?1:0);
+ if(x||y){h.target=null;let m=Math.hypot(x,y);h.x=clamp(h.x+x/m*h.speed*dt,10,W-10);h.y=clamp(h.y+y/m*h.speed*dt,10,H-10)}
+ else if(h.target){moveToward(h,h.target,dt);if(dist(h,h.target)<5)h.target=null}
+ const village=getNearSite();
+ if(village&&h.hp<h.max){h.hp=Math.min(h.max,h.hp+(16+8*village.med)*dt);h.healing=true;}else h.healing=false;
+ const candidates=[...S.troops.filter(u=>u.team==='enemy'&&u.hp>0),...S.wagons.filter(u=>u.team==='enemy'&&u.hp>0),...S.camps.filter(c=>c.hp>0)];
+ if(S.rival.respawn<=0&&S.rival.hp>0)candidates.push(S.rival);
+ const targets=candidates.filter(v=>dist(h,v)<49).sort((a,b)=>dist(h,a)-dist(h,b));
+ if(h.cd<=0&&targets.length){doAttack(h,targets[0],h.atk);h.cd=.70;}
+}
+function rivalChoose(){const r=S.rival;if(r.respawn>0)return;
+ const refuge=nearestOwned(r,'enemy');if(!refuge)return;
+ if(r.hp<r.max*.45||r.mode==='heal'&&r.hp<r.max*.92){r.mode='heal';r.target=refuge;r.goalText='curándose en '+refuge.name;r.decision=3;return}
+ const choices=[];
+ // Utility AI: beneficio/(tiempo de viaje + riesgo + tiempo combatiendo).
+ for(const c of S.camps){if(c.hp<=0)continue;if(S.t<65&&c.x<550)continue;const risk=viability(r,c);if(risk>.78)continue;
+ const travel=dist(r,c)/r.speed,ttk=c.hp/r.atk*.78;
+ const deny=dist(S.hero,c)<240?1.23:1;
+ const utility=((c.gold*.55+c.xp*.55)*deny)/(5+travel+ttk+Math.pow(risk,2)*25);
+ choices.push({mode:'farm',target:c,score:utility,goalText:`farmeando ${c.name}`});}
+ const defense=S.sites.filter(v=>v.team==='enemy'&&v.hp<v.max*.68).sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];
+ if(defense)choices.push({mode:'defend',target:defense,score:5.0+(1-defense.hp/defense.max)*7,goalText:'protegiendo '+defense.name});
+ const wagons=S.wagons.filter(v=>v.team==='ally'&&v.hp>0);
+ for(const w of wagons)choices.push({mode:'intercept',target:w,score:Math.max(1,6.5-dist(r,w)/140),goalText:'cazando caravana'});
+ const front=S.sites.filter(v=>v.team==='ally').sort((a,b)=>(a.hp/a.max+dist(r,a)/1100)-(b.hp/b.max+dist(r,b)/1100))[0];
+ if(front&&S.t>105&&r.level>=3&&r.hp>r.max*.62)choices.push({mode:'raid',target:front,score:4.7+(1-front.hp/front.max)*5+(r.level>=3?1.2:0),goalText:'atacando '+front.name});
+ if(!choices.length){r.mode='heal';r.target=refuge;r.goalText='reagrupándose';r.decision=3;return}
+ // Every 4–7 seconds recalculate; avoid switching tasks every frame.
+ choices.sort((a,b)=>b.score-a.score);
+ const best=choices[0];r.mode=best.mode;r.target=best.target;r.goalText=best.goalText;r.decision=4+rand()*3;
+}
+function updateRival(dt){const r=S.rival;r.cd=Math.max(0,r.cd-dt);
+ if(r.respawn>0){r.respawn-=dt;if(r.respawn<=0)heroRespawn(r);return}
+ r.decision-=dt;
+ if(r.hp<r.max*.32&&r.mode!=='heal')r.decision=0;
+ if(r.decision<=0||!r.target||(r.target.hp<=0&&r.mode!=='heal'&&r.mode!=='raid'))rivalChoose();
+ // Misma curación territorial que tú, sin regeneración en la jungla.
+ const atVillage=S.sites.find(v=>v.team==='enemy'&&dist(r,v)<76);
+ if(atVillage&&r.hp<r.max){r.hp=Math.min(r.max,r.hp+(16+atVillage.med*8)*dt);}
+ if(r.mode==='heal'){const v=nearestOwned(r,'enemy');if(v){if(dist(r,v)>42)moveToward(r,v,dt);if(r.hp>r.max*.92)r.decision=0}}
+ else if(r.target){const stop=r.mode==='farm'?34:r.mode==='intercept'?25:r.mode==='defend'?32:89;if(dist(r,r.target)>stop)moveToward(r,r.target,dt);}
+ // Si el rival se cruza contigo o con una patrulla, pelea; puede morir.
+ const enemies=[...S.troops.filter(u=>u.team==='ally'&&u.hp>0),...S.wagons.filter(u=>u.team==='ally'&&u.hp>0)];
+ if(S.hero.hp>0&&S.hero.respawn<=0)enemies.push(S.hero);
+ const threat=enemies.filter(v=>dist(r,v)<48).sort((a,b)=>dist(r,a)-dist(r,b))[0];
+ if(r.cd<=0){if(threat){doAttack(r,threat,r.atk);r.cd=.78}
+ else if(r.mode==='farm'&&r.target?.hp>0&&dist(r,r.target)<49){doAttack(r,r.target,r.atk);r.cd=.78}
+ else if(r.mode==='raid'&&r.gold>=55&&S.t>110&&S.t>=(r.nextRaid||0)){ // Compra una ofensiva desde una aldea propia, no daña edificios directamente.
+ const v=nearestOwned(r,'enemy');if(v){spawnPatrol(v,2,false,r.target);r.gold-=55;r.nextRaid=S.t+22;addLog(`🥷 El rival invierte oro en asaltar ${r.target.name}.`,true);r.decision=0;}}
+ }
+}
+function updateCamps(dt){for(const c of S.camps){
+ if(c.hp<=0){if(S.t>=c.respawnAt){const growth=1+Math.min(.22,Math.floor(S.t/100)*.045);
+ c.max=Math.round(c.baseHp*growth);c.dmg=Math.round(c.baseDmg*(1+Math.min(.14,Math.floor(S.t/140)*.035)));
+ c.hp=c.max;c.cd=.9;c.active=false;c.reset=0;addLog(`🌱 Reapareció ${c.name}.`);}continue}
+ c.cd-=dt;const h=S.hero,r=S.rival;
+ // Solo golpean a quien realmente está en combate, no por pasar cerca.
+ const nearH=h.hp>0&&h.respawn<=0&&dist(h,c)<49;
+ const nearR=r.hp>0&&r.respawn<=0&&dist(r,c)<49;
+ const target=nearH&&nearR?(dist(h,c)<dist(r,c)?h:r):nearH?h:nearR?r:null;
+ if(target){c.active=true;c.reset=0;c.target=target;if(c.cd<=0){hurt(target,c.dmg,c);c.cd=c.rate;float('✷',c.x,c.y-19,'#ffcca6')}}
+ else if(c.active){c.reset+=dt;if(c.reset>=5){c.active=false;c.hp=Math.min(c.max,c.hp+c.max*.22);c.cd=.8;}}
+ else if(c.hp<c.max){c.hp=Math.min(c.max,c.hp+5*dt)}
+ }}
+function transferSite(site,owner){if(site.team===owner)return;site.team=owner;site.max=site.id===2||site.id===5?250:300;site.hp=site.max*.56;site.stock=8;site.med=0;site.def=0;site.siege=0;site.siegeBy=null;site.nextSquad=S.t+27;site.captureShield=S.t+9;site.flash=.9;ring(site.x,site.y,owner==='ally'?'#9ee9ab':'#f08b72',100);if(owner==='ally'){S.stats.captured++;S.hero.gold+=28;addLog(`¡${site.name} es nuestra! +28 oro.`)}else addLog(`¡Han conquistado ${site.name}! El frente ha cambiado.`,true);for(const u of S.troops)if(u.goal===site.id&&u.team===owner&&!u.guard)u.goal=S.sites.filter(x=>x.team!==owner).sort((a,b)=>dist(u,a)-dist(u,b))[0]?.id??site.id;}
+function hitSite(site,dmg,attacker){if(attacker===S.hero||attacker===S.rival)return;if(site.hp<=0||S.t<(site.captureShield||0))return;site.hp=Math.max(0,site.hp-dmg);site.under=S.t;site.flash=.19;if(site.hp===0){site.siegeBy=attacker.team;site.siege=0;addLog(`¡${site.name} está en asedio! Quedan unos segundos para intervenir.`,site.team==='ally');ping(site.x,site.y,'!')}}
+function updateSites(dt){for(const v of S.sites){v.flash=Math.max(0,v.flash-dt);v.stock=Math.min(120,v.stock+dt*.31);
+if(v.hp<=0&&v.siegeBy){const attackers=S.troops.filter(u=>u.hp>0&&u.team===v.siegeBy&&dist(u,v)<110).length+(v.siegeBy==='ally'&&S.hero.hp>0&&S.hero.respawn<=0&&dist(S.hero,v)<92?1:0)+(v.siegeBy==='enemy'&&S.rival.hp>0&&S.rival.respawn<=0&&dist(S.rival,v)<92?1:0);if(attackers){v.siege+=dt;v.under=S.t;if(v.siege>=12)transferSite(v,v.siegeBy)}else{v.siege=Math.max(0,v.siege-1.7*dt);if(v.siege<=0&&S.t-v.under>3){v.hp=v.max*.17;v.siegeBy=null;addLog(`${v.name} ha repelido el asedio.`)}}}
+if(v.hp>0&&S.t-v.under>8)v.hp=Math.min(v.max,v.hp+(.5+v.def*.25)*dt);
+if(v.hp>0&&v.hp<v.max*.48&&(v.nextAid||0)<S.t){const helper=S.sites.filter(a=>a!==v&&a.team===v.team&&a.stock>15).sort((a,b)=>dist(a,v)-dist(b,v))[0];if(helper){spawnPatrol(helper,2,false,v);helper.stock=Math.max(0,helper.stock-15);v.nextAid=S.t+62;if(v.team==='ally')addLog(`¡${helper.name} envía refuerzos a ${v.name}!`)}}
+if(S.t>=v.nextSquad){if(v.stock>=18){const n=v.stock>74?3:2;v.stock-=18;spawnPatrol(v,n);v.nextSquad=S.t+(v.squad*1.40-v.def*1.6)*(v.team==='enemy'?1.01:1)}else v.nextSquad=S.t+5}
+const candidates=[];const opposite=v.team==='ally'?'enemy':'ally';if(opposite==='ally'&&S.hero.hp>0&&S.hero.respawn<=0&&dist(v,S.hero)<91)candidates.push(S.hero);if(opposite==='enemy'&&S.rival.hp>0&&S.rival.respawn<=0&&dist(v,S.rival)<91)candidates.push(S.rival);for(const u of S.troops){if(u.team!==v.team&&u.hp>0&&dist(v,u)<85)candidates.push(u)}
+v.tower=(v.tower??0)-dt;if(v.hp>0&&candidates.length&&v.tower<=0){const target=candidates.sort((a,b)=>dist(v,a)-dist(v,b))[0];hurt(target,16+v.def*5,v);v.tower=1.32-v.def*.14;ring(target.x,target.y,v.team==='ally'?'#8fdcad':'#fc8c75',22);v.under=S.t}
+}}
+function updateTroops(dt){for(const u of S.troops){if(u.hp<=0)continue;u.cd=Math.max(0,u.cd-dt);let foe=findTarget(u,47);const prey=u.hunt?S.wagons.find(w=>w.id===u.hunt&&w.hp>0):null;if(u.hunt&&!prey)u.hunt=null;const destination=prey||S.sites[u.goal];if(u.guard&&(destination?.team!==u.team||S.t>u.guardUntil||destination.hp>destination.max*.91&&dist(u,destination)<64&&!findTarget(u,85))){u.guard=false}if(destination?.team===u.team&&!u.guard&&!prey){const newTarget=S.sites.filter(s=>s.team!==u.team).sort((a,b)=>dist(u,a)-dist(u,b))[0];u.goal=newTarget?.id??u.goal}const target=prey||S.sites[u.goal];if(!foe&&target){const stop=prey?27:(target.team!==u.team?63:10);if(dist(u,target)>stop)moveToward(u,target,dt)}if(!foe)foe=findTarget(u,48);
+if(u.cd<=0){if(foe){doAttack(u,foe,u.atk);u.cd=1.25+rand()*.24}else if(target&&target.type!=='wagon'&&target.team!==u.team&&dist(u,target)<72){hitSite(target,u.atk*.62,u);u.cd=1.45}}}
+S.troops=S.troops.filter(u=>u.hp>0);if(S.troops.length>85)S.troops=S.troops.slice(-85)}
+function updateWagons(dt){for(const w of S.wagons){if(w.hp<=0)continue;
+if(!w.ambushed&&S.t>=w.ambushAt){w.ambushed=true;if(w.team==='ally'&&rand()<.45){const e=nearestOwned(w,'enemy');if(e){const d=dist(e,w)||1;for(let i=0;i<2;i++){const raider=entity(clamp(w.x+(e.x-w.x)*.27+12*i,20,W-20),clamp(w.y+(e.y-w.y)*.27-12*i,20,H-20),'enemy',65,11,70);raider.type='unit';raider.hunt=w.id;raider.goal=e.id;raider.cd=.55;S.troops.push(raider)}addLog('¡Emboscada a una caravana aliada! Sigue en movimiento.',true);ping(w.x,w.y,'!')}}}
+const dst=S.sites[w.goal];if(!dst||dst.team!==w.team){w.hp=0;continue}const foe=findTarget(w,25);if(!foe)moveToward(w,dst,dt);if(dist(w,dst)<29){w.hp=0;dst.stock=Math.min(120,dst.stock+36);dst.hp=Math.min(dst.max,dst.hp+38);if(w.team==='ally'){S.stats.caravansDelivered++;S.hero.gold+=9;addLog(`La caravana llegó a ${dst.name}: +suministros, +38 de defensa, +9 oro.`)}else if(canSee(dst)){addLog(`Una caravana enemiga abasteció ${dst.name}.`,true)}ring(dst.x,dst.y,'#f0cc88',60)}}S.wagons=S.wagons.filter(w=>w.hp>0)}
+function randomEvent(){const ally=getAllySites(),enemies=getAllySites('enemy');if(!ally.length||!enemies.length)return;const event=Math.floor(rand()*4);if(event===0){const v=ally.sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];const origin=enemies.sort((a,b)=>dist(a,v)-dist(b,v))[0];spawnPatrol(origin,3,false,v);addLog(`Informes: columna de asalto hacia ${v.name}.`,true);ping(v.x,v.y,'!')}
+else if(event===1){spawnWagon('ally');spawnWagon('enemy');}
+else if(event===2){const v=enemies[Math.floor(rand()*enemies.length)],f=ally.sort((a,b)=>dist(a,v)-dist(b,v))[0];spawnPatrol(v,2,false,f);addLog(`Exploradores: tropas de ${v.name} avanzan por ${f.tag}.`,true)}
+else{const v=ally[Math.floor(rand()*ally.length)];v.stock=Math.min(120,v.stock+20);addLog(`Campesinos de ${v.name} reúnen suministros (+20).`)} }
+function ping(x,y,txt){S.pings.push({x,y,txt,life:9})}
+function checkEnd(){const ours=ownerCount(),enemy=6-ours;if(ours>=5)S.dominance=Math.max(0,S.dominance)+1/30;else if(enemy>=5)S.dominance=Math.min(0,S.dominance)-1/30;else S.dominance=0;
+if(ours===6||S.dominance>=25)end(true,'Has dominado el valle. Tu control territorial decidió la guerra.');else if(ours===0||S.dominance<=-25)end(false,'Las ciudades enemigas controlan el valle.');else if(S.remaining<=0)end(ours>=4,ours>=4?'Mantienes más territorio que el rival tras siete minutos.':'Al terminar la partida necesitas cuatro de las seis aldeas. El enemigo te ha superado.')}
+function step(dt){if(S.mode!=='play')return;dt=Math.min(dt,.085);S.t+=dt;S.remaining=Math.max(0,DURATION-S.t);updateHero(dt);updateRival(dt);updateCamps(dt);updateSites(dt);updateTroops(dt);updateWagons(dt);if(S.t>=S.nextWagon){spawnWagon('ally');spawnWagon('enemy');S.nextWagon=S.t+47+rand()*12}if(S.t>=S.nextEvent){randomEvent();S.nextEvent=S.t+70+rand()*16}for(const p of particles)p.life-=dt;particles=particles.filter(p=>p.life>0);for(const p of pulses)p.life-=dt;pulses=pulses.filter(p=>p.life>0);for(const p of S.pings)p.life-=dt;S.pings=S.pings.filter(p=>p.life>0);S._endCheck=(S._endCheck||0)+dt;if(S._endCheck>.20){checkEnd();S._endCheck=0}}
+function end(win,detail){if(S.mode!=='play')return;S.mode=win?'won':'lost';addLog(detail,!win);setCover(win?'won':'lost');renderUI()}
+function setCover(mode){$('cover').classList.toggle('hide',mode==='hide');if(mode==='hide')return;const title=$('covertitle'),body=$('coverbody'),icon=$('covericon'),button=$('play'),rules=$('coverrules');rules.style.display=mode==='intro'?'grid':'none';if(mode==='intro'){title.textContent='Una frontera en guerra';body.innerHTML='Hay 3 aldeas aliadas y 3 enemigas, pero <strong style="color:#f6dda0">tú no atacas edificios</strong>. Farmea campamentos fáciles, vuelve a una aldea para curarte y protege caravanas. El jungla rojo compite por los mismos campamentos.';icon.textContent='⚔️';button.textContent='EMPEZAR PARTIDA ▶'}else if(mode==='paused'){icon.textContent='⏸️';title.textContent='Partida pausada';body.textContent='Piensa tu siguiente movimiento. ¿Farmear, reforzar o conquistar?';button.textContent='CONTINUAR ▶'}else{const win=mode==='won';icon.textContent=win?'🏆':'💀';title.textContent=win?'¡El valle es tuyo!':'El valle ha caído';body.textContent=`${S.logs[0].msg} Has terminado con ${ownerCount()} aldeas aliadas, nivel ${S.hero.level}, ${S.stats.captured} conquistas, ${S.stats.deaths} muertes y ${S.stats.caravansDelivered} caravanas entregadas.`;button.textContent='JUGAR DE NUEVO ↻'}}
+function begin(){if(S.mode==='paused'){S.mode='play';last=performance.now();setCover('hide');return}if(S.mode!=='intro')create();S.mode='play';last=performance.now();setCover('hide')}
+function pause(){if(S.mode==='play'){S.mode='paused';setCover('paused')}else if(S.mode==='paused')begin()}
+function mapXY(e){const rc=C.getBoundingClientRect();return{x:clamp((e.clientX-rc.left)/rc.width*W,10,W-10),y:clamp((e.clientY-rc.top)/rc.height*H,10,H-10)}}
+function setDest(x,y){if(S.mode==='play'&&S.hero.respawn<=0){S.hero.target={x,y};ring(x,y,'#80cbda',24)}}
+function drawRound(x,y,r,col,alpha=1){g.globalAlpha=alpha;g.fillStyle=col;g.beginPath();g.arc(x,y,r,0,Math.PI*2);g.fill();g.globalAlpha=1}
+function line(a,b,col,width=1,dash=[]){g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.lineWidth=width;g.strokeStyle=col;g.setLineDash(dash);g.stroke();g.setLineDash([])}
+function title(t,x,y,color='#f6f3dc',font='700 11px system-ui'){g.font=font;g.textAlign='center';g.textBaseline='middle';g.fillStyle='#0d1814';g.fillText(t,x+1.1,y+1.3);g.fillStyle=color;g.fillText(t,x,y)}
+function bar(x,y,w,r,col){g.fillStyle='#11201ad9';g.fillRect(x-w/2,y,w,5);g.fillStyle=col;g.fillRect(x-w/2,y,w*clamp(r,0,1),5)}
+function icon(t,x,y,size=26){g.font=size+'px system-ui,Apple Color Emoji,Segoe UI Emoji';g.textAlign='center';g.textBaseline='middle';g.fillText(t,x,y+1)}
+function draw(){if(!S)return;g.clearRect(0,0,W,H);const bg=g.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#304c38');bg.addColorStop(.53,'#263f32');bg.addColorStop(1,'#25372f');g.fillStyle=bg;g.fillRect(0,0,W,H);
+// Terrain patches, and subtle territory shading
+for(const v of S.sites){const gr=g.createRadialGradient(v.x,v.y,23,v.x,v.y,157);const ally=v.team==='ally';gr.addColorStop(0,ally?'#6eb98c21':'#db6c5831');gr.addColorStop(1,'#00000000');g.fillStyle=gr;g.fillRect(v.x-158,v.y-158,316,316)}
+for(const a of grass){g.globalAlpha=a.a;g.fillStyle=a.type?'#b7bd83':'#4f7b54';if(a.type){g.beginPath();g.arc(a.x,a.y,2,0,7);g.fill()}else{g.beginPath();g.moveTo(a.x,a.y-a.r);g.lineTo(a.x-a.r*.7,a.y+a.r*.4);g.lineTo(a.x+a.r*.7,a.y+a.r*.4);g.closePath();g.fill()}}g.globalAlpha=1;
+// Roads and river
+for(const [a,b] of roads){line(S.sites[a],S.sites[b],'#b0a57c45',15);line(S.sites[a],S.sites[b],'#c7b58940',9);line(S.sites[a],S.sites[b],'#eee1af40',1,[5,12])}
+g.beginPath();g.moveTo(480,-10);g.bezierCurveTo(437,140,525,198,488,329);g.bezierCurveTo(452,468,530,511,506,650);g.lineWidth=13;g.strokeStyle='#78a9a360';g.stroke();g.lineWidth=3;g.strokeStyle='#a5d0c867';g.stroke();
+// Pings
+for(const p of S.pings){const a=Math.min(1,p.life/2);drawRound(p.x,p.y,33+(9-p.life)*4,'#ffad7b',.13*a);title('!',p.x,p.y-55,'#ffb698','800 17px system-ui')}
+// Sight fields
+for(const v of S.sites){const ally=v.team==='ally',color=ally?'#80cc98':'#e68b71';g.setLineDash([5,7]);g.strokeStyle=ally?'#8acbaa33':'#de95822e';g.lineWidth=1;g.beginPath();g.arc(v.x,v.y,ally?76:91,0,7);g.stroke();g.setLineDash([]);drawRound(v.x,v.y,ally?77:91,ally?'#6ac892':'#bf6c53',.065);drawRound(v.x,v.y,39,ally?'#6ac892':'#bf6c53',.14);drawRound(v.x,v.y,27,'#14251e',.9);g.strokeStyle=color;g.lineWidth=3;g.beginPath();g.arc(v.x,v.y,28,0,7);g.stroke();icon(v.emoji,v.x,v.y-3,29);bar(v.x,v.y+34,68,v.hp/v.max,ally?'#9fe2ac':'#ef977e');title(v.name,v.x,v.y+46,ally?'#d1f0cf':'#ffb8a7','800 12px system-ui');if(v.med>0)title('✚'.repeat(v.med),v.x-22,v.y-23,'#a4ecb9','800 11px system-ui');if(v.def>0)title('✦'.repeat(v.def),v.x+24,v.y-23,'#ffe2a0','800 11px system-ui');if(v.hp===0&&v.siegeBy){title('⚠ ASEDIO '+Math.ceil(12-v.siege)+' s',v.x,v.y-58,'#ffc5a5','900 11px system-ui');g.strokeStyle='#ffc077';g.lineWidth=4;g.beginPath();g.arc(v.x,v.y,36,-Math.PI/2,-Math.PI/2+(v.siege/12)*Math.PI*2);g.stroke()}if(v.flash>0){g.strokeStyle=ally?'#d7ffb8':'#ffd5bd';g.lineWidth=5*v.flash;g.beginPath();g.arc(v.x,v.y,30+20*(1-v.flash),0,7);g.stroke()}}
+// Camps
+for(const c of S.camps){const resp=c.hp<=0,show=dist(S.hero,c)<220||S.sites.some(s=>s.team==='ally'&&dist(s,c)<135)||resp||c.tier<=2;const dangerRatio=viability(S.hero,c),dangerous=c.hp<=0?'#72877d':dangerRatio<.22?'#88e5ab':dangerRatio<.65?'#efd18b':dangerRatio<1.06?'#efa071':'#eb6d77';drawRound(c.x,c.y,24,'#152a1e',.65);g.strokeStyle=resp?'#71847769':dangerous;g.lineWidth=2;g.beginPath();g.arc(c.x,c.y,23,0,7);g.stroke();if(!resp){icon(show?c.emoji:'❔',c.x,c.y-1,24);bar(c.x,c.y+29,48,c.hp/c.max,dangerous)}else{icon('🪵',c.x,c.y,20);title(Math.ceil(c.respawnAt-S.t)+' s',c.x,c.y+30,'#aac1ac','700 10px system-ui')}title('★'.repeat(c.tier),c.x,c.y-36,dangerous,'800 10px system-ui')}
+// Caravans
+for(const w of S.wagons){if(w.hp<=0||w.team==='enemy'&&!canSee(w))continue;drawRound(w.x,w.y,16,w.team==='ally'?'#96edb7':'#ff8c78',.3);icon(w.team==='ally'?'🚚':'🛒',w.x,w.y,23);bar(w.x,w.y+20,32,w.hp/w.max,w.team==='ally'?'#b2e7bf':'#f69f87')}
+// Squads
+for(const u of S.troops){if(u.hp<=0||u.team==='enemy'&&!canSee(u))continue;drawRound(u.x,u.y,8,u.team==='ally'?'#b7e4bf':'#e69b84',.94);drawRound(u.x,u.y,4,u.team==='ally'?'#214737':'#672d2d');if(u.hp<u.max)bar(u.x,u.y-15,22,u.hp/u.max,u.team==='ally'?'#9fd8ac':'#ef9e85')}
+// Rival
+const r=S.rival;if(r.respawn<=0&&r.hp>0){drawRound(r.x,r.y,18,'#f7a5b7',.2);drawRound(r.x,r.y,14,'#803750');g.strokeStyle='#fbaac0';g.lineWidth=2.2;g.beginPath();g.arc(r.x,r.y,15,0,7);g.stroke();icon('🥷',r.x,r.y,23);bar(r.x,r.y-24,40,r.hp/r.max,'#f7a9bf');title('🥷 JUNGla rival · Nv '+r.level,r.x,r.y-35,'#ffd0dc','800 10px system-ui')}
+// Hero
+const h=S.hero;if(h.respawn<=0){if(h.healing){drawRound(h.x,h.y,26,'#72ec93',.17);title('✚',h.x+24,h.y-29,'#b8ffd0','900 18px system-ui')}if(h.target){g.strokeStyle='#b7eaffaf';g.setLineDash([3,9]);g.lineWidth=1.5;g.beginPath();g.moveTo(h.x,h.y);g.lineTo(h.target.x,h.target.y);g.stroke();g.setLineDash([]);g.strokeStyle='#bcffff8c';g.lineWidth=2;g.beginPath();g.arc(h.target.x,h.target.y,5,0,7);g.stroke()}drawRound(h.x,h.y,22,'#b7e5fe',.16);drawRound(h.x,h.y,17,'#25536e');g.strokeStyle='#b9ecff';g.lineWidth=3;g.beginPath();g.arc(h.x,h.y,17,0,7);g.stroke();icon('🧙',h.x,h.y,25);bar(h.x,h.y-27,46,h.hp/h.max,'#f5b083');title('TÚ · Nv '+h.level,h.x,h.y-40,'#e4f4ff','900 11px system-ui')}
+else{const v=nearestOwned(h,'ally');if(v)title('REAPARICIÓN '+Math.ceil(h.respawn),v.x,v.y-70,'#f8d2a2')}
+for(const p of pulses){const f=1-p.life/p.max;g.beginPath();g.arc(p.x,p.y,5+p.r*f,0,7);g.strokeStyle=p.col;g.globalAlpha=p.life/p.max;g.lineWidth=2.5;g.stroke();g.globalAlpha=1}for(const p of particles){g.globalAlpha=p.life;title(p.msg,p.x,p.y-(1-p.life)*30,p.col,'900 14px system-ui');g.globalAlpha=1}
+// Strategic readable minimap band
+const ours=ownerCount();g.fillStyle='#0b1e1ab5';g.fillRect(7,7,170,26);g.textAlign='left';g.font='800 11px system-ui';g.fillStyle='#c9e5d1';g.fillText('🟢 '+ours+'   ⚔   '+(6-ours)+' 🔴',18,24);g.textAlign='right';g.fillStyle='#ead7a0';g.fillText('DÍA '+Math.floor(S.t/60+1),W-15,22);
+}
+function renderUI(){if(!S)return;const h=S.hero,r=S.rival,ours=ownerCount(),site=getNearSite(),need=xpRequired(h.level);
+$('hp').textContent=Math.ceil(h.hp);$('hpmax').textContent=' / '+h.max;$('hpbar').style.width=100*h.hp/h.max+'%';$('level').textContent=h.level;$('xptext').textContent=Math.floor(h.xp)+' / '+need+' PX';$('xpbar').style.width=100*h.xp/need+'%';$('gold').textContent=Math.floor(h.gold);$('territory').textContent=ours+' / 6';$('terrbar').style.width=ours/6*100+'%';$('friendstrip').style.width=ours/6*100+'%';$('foestrip').style.width=(6-ours)/6*100+'%';$('frontscore').textContent=ours+' contra '+(6-ours);$('timer').textContent=timeStr(S.remaining);$('timerbar').style.width=S.remaining/DURATION*100+'%';$('holding').textContent=Math.abs(S.dominance)>1?Math.round(Math.abs(S.dominance))+'/25 s':'';
+const danger=S.sites.filter(v=>v.team==='ally'&&v.hp/v.max<.64).sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];$('statusLine').textContent=danger?`⚠️ ${danger.name} está bajo presión (${Math.round(danger.hp/danger.max*100)} %). ¿Vas o aprovechas para atacar?`:`🥷 Rival nivel ${r.level}: ${r.goalText||'en ruta'}. Tu jungla y la suya comparten campamentos.`;$('alert').textContent=danger?'⚠️ Frente débil: '+danger.name:site?'🩹 Refugio: '+site.name:'La próxima intervención importa';$('poshint').textContent=site?(h.hp<h.max?`Curando +${16+8*site.med} PV/s`:'Refugio seguro: listo para invertir'):'Curación solo dentro de aldeas verdes.';
+$('nearSite').innerHTML=site?`🩹 <strong>${site.name}</strong> · +${16+8*site.med} PV/s automático · Defensa ${site.def}/2 · Enfermería ${site.med}/2`:'🏠 Entra en el círculo verde de una aldea para curarte (+16 PV/s).';
+$('rivalIntel').innerHTML=`🥷 <strong>JUNGLA RIVAL · Nv ${r.level}</strong> · ${Math.ceil(r.hp)} / ${r.max} PV · <strong>${r.goalText||'pensando'}</strong> · campamentos robados ${S.stats.rivalCamps}`;
+const desc=v=>v.hp<=0&&v.siegeBy?`⚠ ASEDIO · ${Math.ceil(12-v.siege)} s`: `${v.team==='ally'?'Aliada':'Enemiga'} · ${Math.round(v.hp/v.max*100)} % · 🛡${v.def} 🩹${v.med}`;
+$('villages').innerHTML=S.sites.map(v=>`<button type="button" class="village ${v.team==='enemy'?'enemy':''}" data-site="${v.id}" title="Viajar a ${v.name}"><span class="vicon">${v.emoji}</span><span class="vmeta"><div class="vname">${v.name}</div><div class="vdesc">${desc(v)}</div><div class="tinybar"><div style="width:${v.hp/v.max*100}%"></div></div></span><span class="vhealth">${Math.ceil(v.hp)}</span></button>`).join('');
+const medCost=site?35+site.med*25:35,defCost=site?45+site.def*25:45;$('mediccost').textContent=site&&site.med>=2?'MAX':medCost+' 🪙';$('defcost').textContent=site&&site.def>=2?'MAX':defCost+' 🪙';$('medic').disabled=!site||site.med>=2||h.gold<medCost||h.respawn>0;$('defense').disabled=!site||site.def>=2||h.gold<defCost||h.respawn>0;$('push').disabled=!site||h.gold<45||h.respawn>0;
+$('feed').innerHTML=S.logs.map(a=>`<div class="log ${a.warn?'warn':''}"><span class="logtime">${timeStr(a.at)}</span>${a.msg}</div>`).join('');$('camps').innerHTML=S.camps.map(c=>{const ratio=viability(h,c);const danger=ratio<.22?'FÁCIL':ratio<.65?'VIABLE':ratio<1.06?'RIESGO':'LETAL';const show=c.hp>0?`${danger} · ${c.gold} 🪙`:`${Math.max(0,Math.ceil(c.respawnAt-S.t))} s`;return `<div class="campRow"><span>${c.emoji} ${c.name}</span><span class="pill ${c.hp>0&&ratio>=.65?'danger':''}">${show}</span></div>`}).join('');$('speed').textContent=`▶ ${S.speed}× Velocidad`;
+}
+function loop(now){const delta=Math.min((now-last)/1000,.06);last=now;if(S&&S.mode==='play'){let rem=delta*S.speed;while(rem>0){const slice=Math.min(rem,.05);step(slice);rem-=slice;if(S.mode!=='play')break}}if(S&&S.t-uiLast>.24){renderUI();uiLast=S.t}draw();requestAnimationFrame(loop)}
+C.addEventListener('pointerdown',e=>{if(S.mode!=='play')return;e.preventDefault();const pos=mapXY(e);setDest(pos.x,pos.y);if(e.pointerType==='mouse') C.focus({preventScroll:true});$('mapTip').style.display='none'});
+C.addEventListener('pointermove',e=>{if(!S)return;const p=mapXY(e);const s=S.sites.find(v=>dist(p,v)<49),camp=S.camps.find(c=>dist(p,c)<32),w=S.wagons.find(w=>dist(p,w)<26),r=S.rival;let t='';if(s)t=`<strong>${s.name}</strong><br>${s.team==='ally'?'Tu aldea':'Aldea enemiga'} · ${Math.ceil(s.hp)}/${s.max} PV<br>Enfermería ${s.med} · Defensa ${s.def}<br>${s.team==='ally'?'Refugio y mejoras cercanas':'⚠ Torre peligrosa. Solo patrullas capturan'}`;else if(camp)t=`<strong>${camp.name} · Peligro ${'★'.repeat(camp.tier)}</strong><br>${camp.hp>0?Math.ceil(camp.hp)+' / '+camp.max+' PV · daño '+camp.dmg+' · '+(viability(S.hero,camp)<.8?'VIABLE':'PELIGROSO'):'Reaparece en '+Math.ceil(camp.respawnAt-S.t)+' s'}<br>${camp.gold} oro · ${camp.xp} PX`;else if(w)t=`<strong>Caravana ${w.team==='ally'?'aliada':'enemiga'}</strong><br>${Math.ceil(w.hp)} / ${w.max} PV`;else if(r.respawn<=0&&dist(p,r)<35)t=`<strong>Jungla rival · Nv ${r.level}</strong><br>${Math.ceil(r.hp)} / ${r.max} PV · ${r.mode}`;const tip=$('mapTip');if(t){tip.style.display='block';tip.innerHTML=t;const rect=C.getBoundingClientRect();tip.style.left=clamp((p.x/W)*rect.width+14,5,rect.width-225)+'px';tip.style.top=clamp((p.y/H)*rect.height-65,5,rect.height-65)+'px'}else tip.style.display='none'});
+C.addEventListener('pointerleave',()=>{$('mapTip').style.display='none'});
+$('villages').addEventListener('click',e=>{const btn=e.target.closest('[data-site]');if(btn){const v=S.sites[+btn.dataset.site];setDest(v.x+39,v.y+18);C.scrollIntoView({behavior:'smooth',block:'nearest'})}});
+document.addEventListener('keydown',e=>{const k=e.key.toLowerCase();if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(k))e.preventDefault();keys[k]=true;if(e.repeat)return;if(k==='1')upgrade('med');if(k==='2')upgrade('def');if(k==='3')upgrade('push');if(k===' '||k==='escape')pause()});document.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false});window.addEventListener('blur',()=>{keys={};if(S&&S.mode==='play')pause()});document.addEventListener('visibilitychange',()=>{if(document.hidden&&S&&S.mode==='play')pause()});
+$('medic').onclick=()=>upgrade('med');$('defense').onclick=()=>upgrade('def');$('push').onclick=()=>upgrade('push');$('pause').onclick=pause;$('restart').onclick=()=>create();$('play').onclick=begin;$('gotoHeal').onclick=()=>{const site=nearestOwned(S.hero,'ally');if(site)setDest(site.x+36,site.y+22)};$('gotoWeak').onclick=()=>{const danger=S.sites.filter(v=>v.team==='ally').sort((a,b)=>a.hp/a.max-b.hp/b.max)[0];if(danger)setDest(danger.x+32,danger.y+17)};$('speed').onclick=()=>{S.speed=S.speed===1?2:S.speed===2?3:1;renderUI()};
+// Testing hook: allows deterministic fast-forward balance checks without impacting normal play.
+window.FronteraDebug={getState:()=>S,advance:(seconds)=>{for(let i=0;i<seconds*30&&S.mode==='play';i++)step(1/30);renderUI();draw()},restart:create,begin,move:(x,y)=>setDest(x,y),campProjection:(i)=>{const c=S.camps[i];return {name:c.name,ttk:+(c.hp/S.hero.atk*.70).toFixed(1),incoming:expectedDamage(S.hero,c),hp:S.hero.hp,viability:+viability(S.hero,c).toFixed(2)}}};
+create();last=performance.now();requestAnimationFrame(loop);document.getElementById("runtime-warning")?.remove();
+})();
+</script></body></html>
