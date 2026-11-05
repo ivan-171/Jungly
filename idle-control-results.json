@@ -1,0 +1,146 @@
+[
+  {
+    "seed": 171,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 8090,
+    "win": false,
+    "territory": 1,
+    "camps": 0
+  },
+  {
+    "seed": 16009,
+    "win": true,
+    "territory": 6,
+    "camps": 0
+  },
+  {
+    "seed": 23928,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 31847,
+    "win": false,
+    "territory": 1,
+    "camps": 0
+  },
+  {
+    "seed": 39766,
+    "win": true,
+    "territory": 6,
+    "camps": 0
+  },
+  {
+    "seed": 47685,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 55604,
+    "win": false,
+    "territory": 2,
+    "camps": 0
+  },
+  {
+    "seed": 63523,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 71442,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 79361,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 87280,
+    "win": true,
+    "territory": 6,
+    "camps": 0
+  },
+  {
+    "seed": 95199,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 103118,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 111037,
+    "win": true,
+    "territory": 5,
+    "camps": 0
+  },
+  {
+    "seed": 118956,
+    "win": false,
+    "territory": 1,
+    "camps": 0
+  },
+  {
+    "seed": 126875,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 134794,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 142713,
+    "win": false,
+    "territory": 1,
+    "camps": 0
+  },
+  {
+    "seed": 150632,
+    "win": true,
+    "territory": 6,
+    "camps": 0
+  },
+  {
+    "seed": 158551,
+    "win": false,
+    "territory": 3,
+    "camps": 0
+  },
+  {
+    "seed": 166470,
+    "win": false,
+    "territory": 0,
+    "camps": 0
+  },
+  {
+    "seed": 174389,
+    "win": false,
+    "territory": 1,
+    "camps": 0
+  },
+  {
+    "seed": 182308,
+    "win": true,
+    "territory": 6,
+    "camps": 0
+  }
+]

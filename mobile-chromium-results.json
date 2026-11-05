@@ -1,0 +1,518 @@
+{
+  "engine": "chromium",
+  "results": [
+    {
+      "name": "360×740: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 116,
+            "h": 61
+          },
+          {
+            "id": "follow",
+            "w": 116,
+            "h": 61
+          },
+          {
+            "id": "map",
+            "w": 116,
+            "h": 61
+          },
+          {
+            "id": "play",
+            "w": 310,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "360×740: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "360×740: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 121,
+            "h": 55
+          },
+          {
+            "id": "follow",
+            "w": 121,
+            "h": 55
+          },
+          {
+            "id": "map",
+            "w": 121,
+            "h": 55
+          },
+          {
+            "id": "play",
+            "w": 325,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "375×667: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "375×667: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 126,
+            "h": 61
+          },
+          {
+            "id": "follow",
+            "w": 126,
+            "h": 61
+          },
+          {
+            "id": "map",
+            "w": 126,
+            "h": 61
+          },
+          {
+            "id": "play",
+            "w": 340,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "390×844: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "Cambio de orientación durante la partida",
+      "status": "PASS"
+    },
+    {
+      "name": "390×844: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 127,
+            "h": 61
+          },
+          {
+            "id": "follow",
+            "w": 127,
+            "h": 61
+          },
+          {
+            "id": "map",
+            "w": 127,
+            "h": 61
+          },
+          {
+            "id": "play",
+            "w": 343,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "393×852: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "393×852: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 139.328125,
+            "h": 61
+          },
+          {
+            "id": "follow",
+            "w": 139.328125,
+            "h": 61
+          },
+          {
+            "id": "map",
+            "w": 139.328125,
+            "h": 61
+          },
+          {
+            "id": "play",
+            "w": 360,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "430×932: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "430×932: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: inicio visible, sin overflow y controles ≥44 px",
+      "status": "PASS",
+      "details": {
+        "overflow": false,
+        "buttonVisible": true,
+        "buttons": [
+          {
+            "id": "pause",
+            "w": 44,
+            "h": 44
+          },
+          {
+            "id": "heal",
+            "w": 115,
+            "h": 90
+          },
+          {
+            "id": "follow",
+            "w": 115,
+            "h": 90
+          },
+          {
+            "id": "map",
+            "w": 115,
+            "h": 90
+          },
+          {
+            "id": "play",
+            "w": 360,
+            "h": 54
+          },
+          {
+            "id": "startHelp",
+            "w": 95.15625,
+            "h": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "844×390: ayuda inicial pausa e inicio táctil real",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: pausa, ayuda y reanudación",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: mapa inspecciona y recentra",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: tap-to-move táctil",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: drag de inspección",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: multitouch y pointercancel no dan órdenes",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: selección táctil y combate automático pagan recompensa",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: botón Refugio viaja a aldea y cura",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: joystick opcional y cancelación",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: pérdida de foco pausa sin recuperación de tiempo",
+      "status": "PASS"
+    },
+    {
+      "name": "844×390: resultados y nueva partida",
+      "status": "PASS"
+    },
+    {
+      "name": "Cero errores JavaScript de página en todas las resoluciones",
+      "status": "PASS"
+    }
+  ],
+  "errors": []
+}

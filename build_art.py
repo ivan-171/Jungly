@@ -1,0 +1,44 @@
+from pathlib import Path
+import json
+base=Path(__file__).parent
+out=base/'assets'
+out.mkdir(exist_ok=True)
+def svg(body):
+ return '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="112" viewBox="0 0 96 112"><g stroke="#302633" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">'+body+'</g></svg>'
+art={}
+for name,cloak,trim,enemy in [('hero','#f4e9d6','#d8a451',False),('rival','#67465f','#e5957a',True)]:
+ art[name]=svg(f'''<ellipse cx="47" cy="101" rx="29" ry="7" fill="#302633" opacity=".22" stroke="none"/>
+ <path d="M31 67 25 98 37 98 46 73 54 98 67 98 60 64" fill="#493d48"/>
+ <path d="M35 38Q18 43 16 84L31 81 43 91 58 86 78 91Q73 57 61 39Z" fill="{cloak}"/>
+ <path d="m30 55 5 27 12-8 10 7 7-31" fill="{trim}" opacity=".7" stroke="none"/>
+ <path d="M32 32Q31 12 48 9 65 14 66 34L55 44H42Z" fill="{cloak}"/>
+ <path d="m35 31 13-9 14 9-4 13H41Z" fill="#302633"/>
+ <path d="M41 34h5m7 0h5" stroke="#ffe4ac" stroke-width="2.5"/>
+ <path d="M26 48 18 63 27 68 34 57M64 46 72 62 67 68 57 55" fill="{cloak}"/>
+ <path d="m70 66 8-43 5-12 2 13-9 44Z" fill="#f4e9d6"/>
+ <path d="m66 64 14 3m-9 0-2 10" stroke="{trim}" stroke-width="4"/>
+ <path d="m42 50 5 8 6-8-5-5Z" fill="{trim}"/>
+ <path d="M24 81 29 72m36 4 6 8" stroke="{trim}"/>
+ '''+(' <path d="m35 20-8-13 13 9m19 2 11-12-4 21" fill="#cd654f"/>' if enemy else '<path d="m44 11 4-9 5 10" fill="#d8a451"/>'))
+for name,color in [('ally','#eee0bd'),('enemy','#bf675b')]:
+ art[name]=svg(f'''<ellipse cx="48" cy="99" rx="24" ry="6" fill="#302633" stroke="none" opacity=".2"/>
+ <path d="m36 69-5 29h12l7-23 4 23h12l-7-31" fill="#493e49"/>
+ <path d="M32 38Q47 29 63 38l7 40-21 9-22-8Z" fill="{color}"/>
+ <path d="M36 28V15q13-12 26 0v13l-12 9Z" fill="#d4b68a"/>
+ <path d="M36 23h26l-6 9H43Z" fill="#302633"/>
+ <path d="m48 9 2-7 5 10M39 19h22" fill="{color}"/>
+ <path d="m57 44 22 7-2 28-15 9-13-17Z" fill="{color}"/>
+ <path d="m63 51 9 4-2 18-6 5-7-11Z" fill="#d8a451"/>
+ <path d="M24 68 20 24 22 12 26 24 29 67Z" fill="#f4e9d6"/><path d="m18 65 16-1m-9 3 1 10" stroke="#d8a451" stroke-width="4"/>
+ <path d="m41 43 5 17-6 12" fill="none" stroke="#d8a451"/>''')
+art['wolf']=svg('''<ellipse cx="49" cy="95" rx="33" ry="7" fill="#302633" opacity=".2" stroke="none"/><path d="m24 63-12-16 2 27 17 4m-3-2-4 18h10l8-21m19 1 6 20h10l-6-25" fill="#74636b"/><path d="M22 64q5-28 35-23l18 18-11 26-31-4Z" fill="#a99895"/><path d="m45 42 6-23 10 13 17-5 1 22 8 16-19 12-17-15Z" fill="#bfb2a4"/><path d="m55 30 3 16 18-9-2 15m-3 14 10-3M62 52l5 1" fill="none"/><path d="m71 68 2 9 5-10" fill="#f4e9d6"/><path d="m31 49-2 14 13 6-7 9" fill="none" stroke="#e7dac1"/>''')
+art['boar']=svg('''<ellipse cx="47" cy="98" rx="34" ry="6" fill="#302633" opacity=".2" stroke="none"/><path d="m28 74-2 22h11l6-21m18-2 5 23h11l-4-24" fill="#5f4247"/><path d="M17 64Q13 35 45 32q33-3 34 29L67 84H35Z" fill="#a66252"/><path d="m26 44 4-18 8 10 8-17 8 15 9-11 3 18" fill="#67465f"/><path d="m53 51 1-21 13 9 13-1 4 28-9 16H57Z" fill="#cd8566"/><path d="m70 66 17 1 1 12-17 6-10-8Z" fill="#67465f"/><path d="m59 69-13-9q-1 20 17 22m15-20 8-7q8 11-2 18" fill="#f4e9d6"/><path d="m64 53 6 1M28 53l-4 15m11-18-3 17" fill="none"/>''')
+art['beetle']=svg('''<ellipse cx="48" cy="96" rx="34" ry="6" fill="#302633" opacity=".2" stroke="none"/><path d="m23 47-13-7 1 20 13 7m-4 2-13 7 9 11 13-6m40-34 14-7-1 20-13 7m4 2 13 7-9 11-13-6" fill="none" stroke="#67465f" stroke-width="5"/><path d="M20 66q0-33 28-34 28 1 28 34L66 89H31Z" fill="#b78e5a"/><path d="M48 35v55M27 57l16 9-7 14m32-23-15 9 7 14" fill="none" stroke="#f4d8a6"/><path d="m35 39-2-17 12 7 9-14 6 22 1 14-13 7-15-8Z" fill="#67465f"/><path d="m40 40 4 1m9 0h4" stroke="#f4e9d6"/>''')
+art['golem']=svg('''<ellipse cx="48" cy="101" rx="35" ry="7" fill="#302633" opacity=".22" stroke="none"/><path d="m25 70-4 26 17 6 9-29m9-2 2 29 18-4-4-28" fill="#8f7c73"/><path d="m26 39-15 4L4 78l13 10 17-27m33-21 15 3 10 32-13 13-17-26" fill="#ad9583"/><path d="M28 36 45 27 67 37 73 73 53 87 24 73Z" fill="#c1aa8b"/><path d="m31 34 2-24L52 5l14 14-6 20-17 7Z" fill="#d4b68a"/><path d="m38 24 7 2m9-3 7-1m-15 6 1 9M30 52l14 8-3 16m25-27-13 14" fill="none" stroke="#67465f" stroke-width="4"/><path d="m41 54 7-7 10 9-10 11Z" fill="#e5a053"/><path d="M13 57 9 71m72-14 4 15" stroke="#f4e9d6"/>''')
+art['ember']=svg('''<ellipse cx="48" cy="99" rx="31" ry="8" fill="#67465f" opacity=".25" stroke="none"/><path d="m17 90 8-13 47-1 9 15-30 11Z" fill="#ad9583"/><path d="m29 79 5-15h28l7 16-18 10Z" fill="#67465f"/><path d="M48 12q27 30 23 49-3 20-25 19-25-3-24-24 3-11 9-20l4 17Q47 36 48 12Z" fill="#cd654f"/><path d="M49 40q-1 20-10 23 0 12 12 12 16-6 10-17Z" fill="#edb566"/><path d="m10 38 5 5m61-19 4-5M48 1V6" stroke="#d8a451"/>''')
+art['eye']=svg('''<ellipse cx="48" cy="99" rx="32" ry="7" fill="#67465f" opacity=".25" stroke="none"/><path d="m17 92 9-15h43l11 15-31 11Z" fill="#ad9583"/><path d="m34 80 3-31 22-1 7 33-18 10Z" fill="#67465f"/><path d="M12 43q36-37 72 0Q48 79 12 43Z" fill="#f4e9d6"/><ellipse cx="48" cy="43" rx="12" ry="18" fill="#d8a451"/><path d="M48 31v23M48 5v10M13 16l9 10m61-10-9 10" stroke="#67465f" stroke-width="4"/>''')
+for name,color in [('village0','#d8a451'),('village1','#cd654f')]:
+ art[name]=svg(f'''<ellipse cx="48" cy="99" rx="43" ry="10" fill="#302633" opacity=".2" stroke="none"/><path d="M8 67 29 55 69 55 87 69 81 95 14 97Z" fill="#c8b397"/><path d="M15 65V43h18v43m32-1V43h18v43" fill="#f0d6ac"/><path d="m10 44 14-22 14 22m22 0 14-22 14 22" fill="{color}"/><path d="M33 65V31h30v36" fill="#f4e9d6"/><path d="m27 33 21-23 22 23Z" fill="{color}"/><path d="M42 93V72q8-11 16 0v21" fill="#493d48"/><path d="M24 55v9m49-9v9M42 43v12m13-12v12" stroke="#67465f" stroke-width="4"/><path d="M49 13V2l21 5-21 7" fill="{color}"/><path d="M11 82h24m29 0h21M13 90h20m33 0h15" stroke="#ad9583"/>''')
+art['tree']=svg('''<ellipse cx="48" cy="101" rx="31" ry="7" fill="#67465f" stroke="none" opacity=".16"/><path d="M42 69 40 100h14l-2-31" fill="#866058"/><path d="M49 12C35 12 33 23 28 31 8 36 10 54 16 60 5 80 24 91 41 84 50 97 73 87 77 77 95 72 88 55 79 47 83 29 66 25 60 27 61 16 55 12 49 12Z" fill="#a96559"/><path d="M48 35v57m-1-20L28 58m22 20 17-17m-17-8 11-10" fill="none" stroke="#67465f"/><path d="M24 43q5-8 12-8m28 1 6 5M20 69q0 8 9 9" fill="none" stroke="#d99a72"/>''')
+for name,data in art.items():(out/(name+'.svg')).write_text(data)
+(base/'src/art.js').write_text('window.FRONTIER_ART='+json.dumps(art,ensure_ascii=False)+';\n')

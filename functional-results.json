@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Intro and pause freeze the simulation; start advances time",
+    "status": "PASS"
+  },
+  {
+    "name": "Movement, deliberate camp attack, reward exactly once",
+    "status": "PASS"
+  },
+  {
+    "name": "Passing a neutral camp never initiates combat",
+    "status": "PASS"
+  },
+  {
+    "name": "Retreat cancels attacks and neutral leashes reset",
+    "status": "PASS"
+  },
+  {
+    "name": "Death and respawn at owned village",
+    "status": "PASS"
+  },
+  {
+    "name": "Allied village heals; enemy tower damages",
+    "status": "PASS"
+  },
+  {
+    "name": "Camp respawn is shared and cannot pay twice",
+    "status": "PASS"
+  },
+  {
+    "name": "Only final hero hit gets duel credit; tower gets no hero credit",
+    "status": "PASS"
+  },
+  {
+    "name": "Both junglers can duel and kill",
+    "status": "PASS"
+  },
+  {
+    "name": "Troops exchange real damage and kill; hero cannot damage villages",
+    "status": "PASS"
+  },
+  {
+    "name": "Troops capture, shield and send automatic reinforcements",
+    "status": "PASS"
+  },
+  {
+    "name": "Strategic objective buff expires and has correct owner",
+    "status": "PASS"
+  },
+  {
+    "name": "Hidden player position cannot change rival utility choice",
+    "status": "PASS"
+  },
+  {
+    "name": "Limited sight memory expires after nine seconds",
+    "status": "PASS"
+  },
+  {
+    "name": "Victory, defeat and exact tie at 195 seconds",
+    "status": "PASS"
+  },
+  {
+    "name": "Seeded simulation reproduces, finite state, full 195 seconds",
+    "status": "PASS"
+  }
+]
